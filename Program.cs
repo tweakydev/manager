@@ -1,6 +1,6 @@
 ﻿var sv = new WebSocketSharp.Server.WebSocketServer("ws://127.0.0.1:6969");
 
-sv.AddWebSocketService<ClientJoinManager>("/join");
+sv.AddWebSocketService<ClientJoinManager>("/");
 "Registered Client Join".Info();
 
 sv.Start();
