@@ -5,16 +5,18 @@ using WebSocketSharp.Server;
 
 public class ClientJoinManager : WebSocketBehavior {
     protected override void OnOpen() {
-        Console.WriteLine("Open");
         SocketHandler.Clients.Add(this);
-        Log.Debug("New Client Connected");
+        $"New Client Connected {this.Context.Origin}".Info();
     }
 
     protected override void OnMessage(MessageEventArgs e) {
-        Console.WriteLine("Received Message");
         if (e.Data.ToLower().Contains("broadcast")) {
             ClientHandler.HandleBroadcast(e.Data);
         }
+    }
+
+    protected override void OnClose(CloseEventArgs e) {
+        SocketHandler.Clients.Remove(this);
     }
 }
 
