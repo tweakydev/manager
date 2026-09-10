@@ -181,7 +181,7 @@
         "runtime": {
           "lib/websocket-sharp.dll": {
             "assemblyVersion": "1.0.2.59611",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "1.0.2.59611"
           }
         }
       }

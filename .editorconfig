@@ -1,0 +1,17 @@
+root = true
+
+[*.cs]
+
+# Braces on the same line
+csharp_new_line_before_open_brace = none
+
+# General formatting
+indent_style = space
+indent_size = 4
+tab_width = 4
+
+# Keep using spaces around operators
+csharp_space_around_binary_operators = before_and_after
+
+# Don't add unnecessary blank lines
+csharp_new_line_before_members_in_chained_calls = false
