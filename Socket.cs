@@ -14,7 +14,7 @@ public class ClientJoinManager : WebSocketBehavior {
 
         else if(e.Data.ToLower().Contains("name")) {
             SocketHandler.Clients.First(x => x.Websocket == this).Name = e.Data.Remove(0, 3).Trim();
-            $"New Client Connected: {e.Data.Remove(0, 3).Trim()}".Info();
+            $"New Client Connected: {e.Data.Remove(0, 4).Trim()}".Info();
         }
     }
 

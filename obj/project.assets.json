@@ -192,6 +192,15 @@
           "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
+      "StreamThreads/2022.8.12.100": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/StreamThreads.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/StreamThreads.dll": {}
+        }
+      },
       "System.Memory/4.5.3": {
         "type": "package",
         "compile": {
@@ -201,13 +210,16 @@
           "lib/netcoreapp2.1/_._": {}
         }
       },
-      "WebSocketSharp/1.0.3-rc11": {
+      "websocket-sharp-Net8.0/1.0.3.1": {
         "type": "package",
+        "dependencies": {
+          "StreamThreads": "2022.8.12.100"
+        },
         "compile": {
-          "lib/websocket-sharp.dll": {}
+          "lib/net8.0/websocket-sharp.dll": {}
         },
         "runtime": {
-          "lib/websocket-sharp.dll": {}
+          "lib/net8.0/websocket-sharp.dll": {}
         }
       }
     }
@@ -365,6 +377,21 @@
         "sqlitepclraw.provider.e_sqlite3.nuspec"
       ]
     },
+    "StreamThreads/2022.8.12.100": {
+      "sha512": "HYDsRACh0oAdf5G5QBkplgPejUlOXdjbRYmpGf1YkKeFKVzeI6S5SV52/cEsIA0KSFEYTmu2HovL92YqKbbqRQ==",
+      "type": "package",
+      "path": "streamthreads/2022.8.12.100",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon1024-1024.png",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net6.0/StreamThreads.dll",
+        "streamthreads.2022.8.12.100.nupkg.sha512",
+        "streamthreads.nuspec"
+      ]
+    },
     "System.Memory/4.5.3": {
       "sha512": "3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
       "type": "package",
@@ -386,17 +413,19 @@
         "version.txt"
       ]
     },
-    "WebSocketSharp/1.0.3-rc11": {
-      "sha512": "7VCF7f7zVMOvLGD8LeGS4DVXc8lOcB6kXnUMeTxigu+PMiU+6wW5Olq2gYrDU8vDRKOwFY+5RyBaLyzb8skEzA==",
+    "websocket-sharp-Net8.0/1.0.3.1": {
+      "sha512": "1DNRpRbSCxIrYj5uDNrYgvdERNhu5eayBEAFIeG1S8uTWCAW0KFa9/OdhcTCm5fwwqUs8bwVNquJoJdUNznv0A==",
       "type": "package",
-      "path": "websocketsharp/1.0.3-rc11",
+      "path": "websocket-sharp-net8.0/1.0.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "lib/websocket-sharp.dll",
-        "lib/websocket-sharp.xml",
-        "websocketsharp.1.0.3-rc11.nupkg.sha512",
-        "websocketsharp.nuspec"
+        "LICENSE.txt",
+        "README.md",
+        "lib/net8.0/websocket-sharp.dll",
+        "websocket-sharp-net8.0.1.0.3.1.nupkg.sha512",
+        "websocket-sharp-net8.0.nuspec",
+        "websocket-sharp_icon.png"
       ]
     }
   },
@@ -404,7 +433,7 @@
     "net9.0": [
       "Altairis.Pushover.Client >= 1.0.0",
       "Microsoft.Data.Sqlite >= 9.0.10",
-      "WebSocketSharp >= 1.0.3-rc11"
+      "websocket-sharp-Net8.0 >= 1.0.3.1"
     ]
   },
   "packageFolders": {
@@ -465,9 +494,9 @@
             "target": "Package",
             "version": "[9.0.10, )"
           },
-          "WebSocketSharp": {
+          "websocket-sharp-Net8.0": {
             "target": "Package",
-            "version": "[1.0.3-rc11, )"
+            "version": "[1.0.3.1, )"
           }
         },
         "imports": [
@@ -489,17 +518,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'WebSocketSharp 1.0.3-rc11' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0'. This package may not be fully compatible with your project.",
-      "libraryId": "WebSocketSharp",
-      "targetGraphs": [
-        "net9.0"
-      ]
-    }
-  ]
+  }
 }
