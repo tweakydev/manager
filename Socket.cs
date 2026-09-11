@@ -6,7 +6,7 @@ using WebSocketSharp.Server;
 public class ClientJoinManager : WebSocketBehavior {
     protected override void OnOpen() {
         SocketHandler.Clients.Add(this);
-        $"New Client Connected: {Context.Origin}".Info();
+        $"New Client Connected: {Context.RequestUri}".Info();
     }
 
     protected override void OnMessage(MessageEventArgs e) {
@@ -17,7 +17,7 @@ public class ClientJoinManager : WebSocketBehavior {
 
     protected override void OnClose(CloseEventArgs e) {
         SocketHandler.Clients.Remove(this);
-        $"Client Disconnected: {Context.Origin}".Info();
+        $"Client Disconnected: {Context.RequestUri}".Info();
     }
 }
 

@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "f/+TiJmEy3g=",
+  "dgSpecHash": "7+yNFhXOGGc=",
   "success": true,
   "projectFilePath": "C:\\Users\\callum\\Documents\\GitHub\\manager\\Tweaksino.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\callum\\.nuget\\packages\\altairis.pushover.client\\1.0.0\\altairis.pushover.client.1.0.0.nupkg.sha512",
+    "C:\\Users\\callum\\.nuget\\packages\\jorgeserrano.json.jsonsnakecasenamingpolicy\\0.9.0\\jorgeserrano.json.jsonsnakecasenamingpolicy.0.9.0.nupkg.sha512",
     "C:\\Users\\callum\\.nuget\\packages\\microsoft.data.sqlite\\9.0.10\\microsoft.data.sqlite.9.0.10.nupkg.sha512",
     "C:\\Users\\callum\\.nuget\\packages\\microsoft.data.sqlite.core\\9.0.10\\microsoft.data.sqlite.core.9.0.10.nupkg.sha512",
     "C:\\Users\\callum\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.10\\sqlitepclraw.bundle_e_sqlite3.2.1.10.nupkg.sha512",

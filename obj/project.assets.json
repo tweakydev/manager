@@ -2,6 +2,31 @@
   "version": 3,
   "targets": {
     "net9.0": {
+      "Altairis.Pushover.Client/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "JorgeSerrano.Json.JsonSnakeCaseNamingPolicy": "0.9.0"
+        },
+        "compile": {
+          "lib/net6.0/Altairis.Pushover.Client.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Altairis.Pushover.Client.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "JorgeSerrano.Json.JsonSnakeCaseNamingPolicy/0.9.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/JsonSnakeCaseNamingPolicy.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/JsonSnakeCaseNamingPolicy.dll": {}
+        }
+      },
       "Microsoft.Data.Sqlite/9.0.10": {
         "type": "package",
         "dependencies": {
@@ -188,6 +213,33 @@
     }
   },
   "libraries": {
+    "Altairis.Pushover.Client/1.0.0": {
+      "sha512": "vhmB0r8RTPGBtCKDyvCR9p8+UwA+3Y79C+nj71eAkmcirg/V+nfLK2fkeMoL3RAr4gxUfLGgjlOEyoM/OPInQA==",
+      "type": "package",
+      "path": "altairis.pushover.client/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "NuGet-64x64.png",
+        "README.md",
+        "altairis.pushover.client.1.0.0.nupkg.sha512",
+        "altairis.pushover.client.nuspec",
+        "lib/net6.0/Altairis.Pushover.Client.dll",
+        "lib/net6.0/Altairis.Pushover.Client.xml"
+      ]
+    },
+    "JorgeSerrano.Json.JsonSnakeCaseNamingPolicy/0.9.0": {
+      "sha512": "xCqODS+wzpUXNtg4bMMvXG5PLbP0iTwRzRn2R+zWHKm83E6tbV2bCagawXp1EnZeNpd5OXpMxehulZWns8efzQ==",
+      "type": "package",
+      "path": "jorgeserrano.json.jsonsnakecasenamingpolicy/0.9.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "jorgeserrano.json.jsonsnakecasenamingpolicy.0.9.0.nupkg.sha512",
+        "jorgeserrano.json.jsonsnakecasenamingpolicy.nuspec",
+        "lib/netcoreapp3.1/JsonSnakeCaseNamingPolicy.dll"
+      ]
+    },
     "Microsoft.Data.Sqlite/9.0.10": {
       "sha512": "1waeeEEM/Dp5l2laUByEEWfd6qyI00HExDduhLKGT2kPnHArjIDcMf2z9HIjeLPoR56iBHhvXTfAv1hiH/wAAQ==",
       "type": "package",
@@ -350,6 +402,7 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "Altairis.Pushover.Client >= 1.0.0",
       "Microsoft.Data.Sqlite >= 9.0.10",
       "WebSocketSharp >= 1.0.3-rc11"
     ]
@@ -404,6 +457,10 @@
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
+          "Altairis.Pushover.Client": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
           "Microsoft.Data.Sqlite": {
             "target": "Package",
             "version": "[9.0.10, )"
