@@ -18,6 +18,18 @@ public class ClientHandler {
 
         await PushManager.PushToPhone("Broadcast", msg);
     }
+
+    public static void HandleSend(string msg, string rec) {
+        var client = SocketHandler.Clients.FirstOrDefault(
+            x => x.Name == rec
+        );
+
+        client?.Websocket.Context.WebSocket.Send(
+            msg.Split(" ")[2].Trim()
+        );
+    }
+
+
     public static async void HandleBroadcast(string msg, WebSocketBehavior origin) {
         await Broadcast(msg.Remove(0, 9).Trim(), origin);
     }

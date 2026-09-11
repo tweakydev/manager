@@ -16,6 +16,10 @@ public class ClientJoinManager : WebSocketBehavior {
             SocketHandler.Clients.First(x => x.Websocket == this).Name = e.Data.Remove(0, 3).Trim();
             $"New Client Connected: {e.Data.Remove(0, 4).Trim()}".Info();
         }
+
+        else if(e.Data.ToLower().Contains("send")) {
+            ClientHandler.HandleSend(e.Data, e.Data.Split(" ")[2]);
+        }
     }
 
     protected override void OnClose(CloseEventArgs e) {
