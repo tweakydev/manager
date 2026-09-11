@@ -1,4 +1,5 @@
 using WebSocketSharp;
+using WebSocketSharp.Net;
 using WebSocketSharp.Server;
 
 
@@ -20,13 +21,16 @@ public class ClientJoinManager : WebSocketBehavior {
         else if(e.Data.ToLower().Contains("send")) {
             var d = e.Data.Split(" ");
             Console.WriteLine($"Sending {d[2]} to {d[1]}");
-            ClientHandler.HandleSend(e.Data, e.Data.Split(" ")[2]);
+            ClientHandler.HandleSend(e.Data, e.Data.Split(" ")[1]);
         }
     }
 
     protected override void OnClose(CloseEventArgs e) {
         SocketHandler.Clients.RemoveAll(x => x.Websocket == this);
-        $"Client Disconnected: {Context.RequestUri}".Info();
+        var client = SocketHandler.Clients.FirstOrDefault(
+            x => x.Websocket == this
+        );
+        $"Client Disconnected: {client?.Name}".Info();
     }
 }
 
