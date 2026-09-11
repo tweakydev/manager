@@ -24,6 +24,9 @@ public class ClientHandler {
             x => x.Name == rec
         );
 
+        if(client is null)
+            $"Could not find client {rec}".Warn();
+
         client?.Websocket.Context.WebSocket.Send(
             msg.Split(" ")[2].Trim()
         );

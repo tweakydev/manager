@@ -18,6 +18,8 @@ public class ClientJoinManager : WebSocketBehavior {
         }
 
         else if(e.Data.ToLower().Contains("send")) {
+            var d = e.Data.Split(" ");
+            Console.WriteLine($"Sending {d[2]} to {d[1]}");
             ClientHandler.HandleSend(e.Data, e.Data.Split(" ")[2]);
         }
     }
