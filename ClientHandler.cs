@@ -1,15 +1,19 @@
 using WebSocketSharp.Server;
 
-public static class SocketHandler {
-    public static List<WebSocketBehavior> Clients = new();
+public class Client {
+    public required WebSocketBehavior Websocket { get; set; }
+    public string? Name { get; set; } = null;
 }
 
+public static class SocketHandler {
+    public static List<Client> Clients = new();
+}
 
 
 public class ClientHandler {
     private static async Task Broadcast(string msg, WebSocketBehavior origin) {
-        SocketHandler.Clients.Where(x => x != origin).ToList().ForEach(x =>
-            x.Context.WebSocket.Send(msg)
+        SocketHandler.Clients.Where(x => x.Websocket != origin).ToList().ForEach(x =>
+            x.Websocket.Context.WebSocket.Send(msg)
         );
 
         await PushManager.PushToPhone("Broadcast", msg);

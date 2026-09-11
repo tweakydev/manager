@@ -1,22 +1,25 @@
 using WebSocketSharp;
-using WebSocketSharp.Net;
 using WebSocketSharp.Server;
 
 
 public class ClientJoinManager : WebSocketBehavior {
     protected override void OnOpen() {
-        SocketHandler.Clients.Add(this);
-        $"New Client Connected: {Context.RequestUri}".Info();
+        SocketHandler.Clients.Add(new() { Websocket = this });
     }
 
     protected override void OnMessage(MessageEventArgs e) {
         if (e.Data.ToLower().Contains("broadcast")) {
             ClientHandler.HandleBroadcast(e.Data, this);
         }
+
+        else if(e.Data.ToLower().Contains("name")) {
+            SocketHandler.Clients.First(x => x.Websocket == this).Name = e.Data.Remove(0, 3).Trim();
+            $"New Client Connected: {e.Data.Remove(0, 3).Trim()}".Info();
+        }
     }
 
     protected override void OnClose(CloseEventArgs e) {
-        SocketHandler.Clients.Remove(this);
+        SocketHandler.Clients.RemoveAll(x => x.Websocket == this);
         $"Client Disconnected: {Context.RequestUri}".Info();
     }
 }
