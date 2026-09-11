@@ -4,6 +4,8 @@ Console.WriteLine(Environment.GetEnvironmentVariable("API_KEY"));
 
 var sv = new WebSocketSharp.Server.WebSocketServer("ws://127.0.0.1:6969");
 
+sv.Log.Level = WebSocketSharp.LogLevel.Fatal;
+
 sv.AddWebSocketService<ClientJoinManager>("/");
 "Registered Client Join".Info();
 
