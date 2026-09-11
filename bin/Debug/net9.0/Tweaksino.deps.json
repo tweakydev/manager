@@ -8,11 +8,31 @@
     ".NETCoreApp,Version=v9.0": {
       "Tweaksino/1.0.0": {
         "dependencies": {
+          "Altairis.Pushover.Client": "1.0.0",
           "Microsoft.Data.Sqlite": "9.0.10",
           "WebSocketSharp": "1.0.3-rc11"
         },
         "runtime": {
           "Tweaksino.dll": {}
+        }
+      },
+      "Altairis.Pushover.Client/1.0.0": {
+        "dependencies": {
+          "JorgeSerrano.Json.JsonSnakeCaseNamingPolicy": "0.9.0"
+        },
+        "runtime": {
+          "lib/net6.0/Altairis.Pushover.Client.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "JorgeSerrano.Json.JsonSnakeCaseNamingPolicy/0.9.0": {
+        "runtime": {
+          "lib/netcoreapp3.1/JsonSnakeCaseNamingPolicy.dll": {
+            "assemblyVersion": "0.9.0.0",
+            "fileVersion": "0.9.0.0"
+          }
         }
       },
       "Microsoft.Data.Sqlite/9.0.10": {
@@ -192,6 +212,20 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Altairis.Pushover.Client/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vhmB0r8RTPGBtCKDyvCR9p8+UwA+3Y79C+nj71eAkmcirg/V+nfLK2fkeMoL3RAr4gxUfLGgjlOEyoM/OPInQA==",
+      "path": "altairis.pushover.client/1.0.0",
+      "hashPath": "altairis.pushover.client.1.0.0.nupkg.sha512"
+    },
+    "JorgeSerrano.Json.JsonSnakeCaseNamingPolicy/0.9.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xCqODS+wzpUXNtg4bMMvXG5PLbP0iTwRzRn2R+zWHKm83E6tbV2bCagawXp1EnZeNpd5OXpMxehulZWns8efzQ==",
+      "path": "jorgeserrano.json.jsonsnakecasenamingpolicy/0.9.0",
+      "hashPath": "jorgeserrano.json.jsonsnakecasenamingpolicy.0.9.0.nupkg.sha512"
     },
     "Microsoft.Data.Sqlite/9.0.10": {
       "type": "package",

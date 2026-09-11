@@ -84,3 +84,5 @@ C:\Users\callum\Documents\GitHub\manager\obj\Debug\net9.0\refint\Tweaksino.dll
 C:\Users\callum\Documents\GitHub\manager\obj\Debug\net9.0\Tweaksino.pdb
 C:\Users\callum\Documents\GitHub\manager\obj\Debug\net9.0\Tweaksino.genruntimeconfig.cache
 C:\Users\callum\Documents\GitHub\manager\obj\Debug\net9.0\ref\Tweaksino.dll
+C:\Users\callum\Documents\GitHub\manager\bin\Debug\net9.0\Altairis.Pushover.Client.dll
+C:\Users\callum\Documents\GitHub\manager\bin\Debug\net9.0\JsonSnakeCaseNamingPolicy.dll
