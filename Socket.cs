@@ -25,12 +25,23 @@ public class ClientJoinManager : WebSocketBehavior {
         }
     }
 
+    protected override void OnError(WebSocketSharp.ErrorEventArgs e) {
+        Console.WriteLine($"WebSocket ERROR: {e.Message}");
+        Console.WriteLine($"Exception: {e.Exception}");
+    }
+
     protected override void OnClose(CloseEventArgs e) {
-        SocketHandler.Clients.RemoveAll(x => x.Websocket == this);
         var client = SocketHandler.Clients.FirstOrDefault(
             x => x.Websocket == this
         );
-        $"Client Disconnected: {client?.Name}".Info();
+
+        Console.WriteLine(
+            $"Client Disconnected: {client?.Name} | " +
+            $"Code: {e.Code} | Reason: {e.Reason}"
+        );
+
+        SocketHandler.Clients.RemoveAll(x => x.Websocket == this);
     }
+
 }
 

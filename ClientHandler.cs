@@ -36,7 +36,4 @@ public class ClientHandler {
     public static async void HandleBroadcast(string msg, WebSocketBehavior origin) {
         await Broadcast(msg.Remove(0, 9).Trim(), origin);
     }
-
-    public static void HandleOpen(string msg) {
-    } 
 }

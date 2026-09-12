@@ -2,5 +2,5 @@ default:
 	dotnet build 
 
 run:
-	dotnet run --no-restore
+	dotnet bin/Debug/net9.0/Tweaksino.dll
 
